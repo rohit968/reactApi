@@ -26,17 +26,18 @@ const App = () => {
   //}};
 
   return(
-    <div>
-      {users.map((user) => (
-        <Card
-          key = {user.id} 
-          imgsrc = 'https://robohash.org/{user.id}?set=set2&size=180x180'
-          name = {user.name}
-          email = {user.email}
-        />
-      ))}
-      <span>Has Error: {JSON.stringify(errors)}</span>
-    </div>
+    <div className="container mx-auto">
+      <div className="grid grid-cols-5 gap-5">
+        {users.map((user) => (
+          <Card
+            key = {user.id} 
+            imgsrc = {`https://robohash.org/${user.id}?set=set2&size=180x180`}
+            name = {user.name}
+            email = {user.email}
+          />
+        ))}
+      </div>
+    </div>  
   );
 };
 
