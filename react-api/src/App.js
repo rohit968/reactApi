@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Card from './Card.js';
 
 const App = () => {
   const [errors, setErrors] = useState(false);
@@ -27,11 +28,12 @@ const App = () => {
   return(
     <div>
       {users.map((user) => (
-        <div key={user.id}>
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-        <hr />
-        </div>
+        <Card
+          key = {user.id} 
+          imgsrc = 'https://robohash.org/{user.id}?set=set2&size=180x180'
+          name = {user.name}
+          email = {user.email}
+        />
       ))}
       <span>Has Error: {JSON.stringify(errors)}</span>
     </div>
