@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const App = () => {
-  const [Errors, setErrors] = useState(false);
-  const [Users, setUsers] = useState([]);
+  const [errors, setErrors] = useState(false);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -26,14 +26,14 @@ const App = () => {
 
   return(
     <div>
-      {Users.map((user) => (
+      {users.map((user) => (
         <div key={user.id}>
         <h2>{user.name}</h2>
         <p>{user.email}</p>
         <hr />
         </div>
       ))}
-      <span>Has Error: {JSON.stringify(Errors)}</span>
+      <span>Has Error: {JSON.stringify(errors)}</span>
     </div>
   );
 };
