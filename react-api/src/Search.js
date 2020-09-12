@@ -11,7 +11,7 @@ const Search = ({users}) => {
     };
 
     const filteredUser = users.filter( user => {
-        return user.name.toLowerCase().includes(name.toLowerCase())
+        return user.name.toLowerCase().startsWith(name.toLowerCase())
     })
 
     return (
